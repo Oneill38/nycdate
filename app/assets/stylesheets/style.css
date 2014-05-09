@@ -1,0 +1,38 @@
+#logo {
+  font-size: 2em;
+  color: aqua;
+}
+
+div.item {
+  background-color: white;
+}
+
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+  margin: 0 auto;
+}
+
+.marketing {
+  padding-top: 50px;
+}
+
+img.img-circle {
+  display: block;
+  margin: 0 auto;
+}
+
+.marketing .row {
+  width: 1100px;
+  margin: 0 auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.marketing div.col-lg-4 {
+  width: 350px;
+}
+
+.marketing .row p, .marketing .row h2 {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
