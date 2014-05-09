@@ -41,3 +41,6 @@ gem 'spring',        group: :development
 group :assets do
   gem 'twitter-bootstrap-rails'
 end
+
+gem 'devise'
+gem 'omniauth-facebook'
