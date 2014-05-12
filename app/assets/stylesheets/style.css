@@ -1,3 +1,18 @@
+#background_users {
+  background-image: url('central_park.jpg');
+  background-size: cover;
+}
+
+#background_users_show {
+  background-image: url('nyc-aerial.jpg');
+  background-size: cover;
+}
+
+#background_searches {
+  background-image: url('NewYork.jpg');
+  background-size: cover;
+}
+
 #logo {
   font-size: 2em;
   color: aqua;
@@ -34,5 +49,25 @@ img.img-circle {
 .marketing .row p, .marketing .row h2 {
   text-align: center;
   display: block;
+  margin: 0 auto;
+}
+
+.users_container {
+  width: 700px;
+  height: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+  background-color: silver;
+}
+
+#current_user_name {
+  width: 300px;
+  float: right;
+  color: aqua;
+  padding: 15px;
+}
+
+#main_div {
+  width: 600px;
   margin: 0 auto;
 }

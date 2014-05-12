@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Rendezvous NYC</title>
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
@@ -26,14 +26,14 @@
 
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="/users">Login</a></li>
-            <li><a href="/users">Sign up</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/users/:id">Profile</a></li>
+            <li><a href="/users">Sign up/Login</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
+              <a href="/users/user_id/searches" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li class="dropdown-header"></li>
-                <li><a href="#">All</a></li>
+                <li><a href="/users/user_id/searches">All</a></li>
                 <li><a href="#">Sports</a></li>
                 <li class="divider">Concerts</li>
                 <li><a href="#">Food</a></li>
@@ -42,6 +42,12 @@
               </ul>
             </li>
           </ul>
+          <div id="current_user_name">
+            <% if user_signed_in? %>
+            <a href="/users"><strong><%= current_user.email %></strong></a>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
