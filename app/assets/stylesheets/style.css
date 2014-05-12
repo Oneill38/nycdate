@@ -71,3 +71,24 @@ img.img-circle {
   width: 600px;
   margin: 0 auto;
 }
+
+#main_div form {
+  padding-top: 50px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+#main_div form input {
+  width: 200px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#main_div form input[type="submit"] {
+  width: 80px;
+  background-color: aqua;
+}
+
+

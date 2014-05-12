@@ -1,16 +1,4 @@
-<div id="background_searches">
-  <div class="users_container">
-    <div id="main_div">
-    <% if flash[:error] %>
-      <%= flash[:error] %>
-    <% end %>
-
-    <%= render partial: "search_form" %>
-
-
-    </div>
-  </div>
-</div>
+<!-- show.html.erb -->
 
 <!-- Events API Search Info -->
 <div class="search_box">
@@ -41,4 +29,3 @@
   <span class="event"><%= @event_listings[:start_time] %></span>
   </p>
 </div>
-

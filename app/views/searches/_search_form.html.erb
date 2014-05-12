@@ -1,0 +1,9 @@
+  <div class="search">
+   <%= form_tag("searches", method: "POST") do %>
+      <%= label_tag(:hashtag, "Event Search") %>
+      <%= text_field_tag(:hashtag) %>
+      <br>
+      <%= submit_tag("Search") %>
+    <% end %>
+  </div>
+   <!--End of search form-->
