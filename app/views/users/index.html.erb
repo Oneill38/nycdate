@@ -1,0 +1,27 @@
+<!-- index.html.erb -->
+<div id="background_users">
+  <div class="users_container">
+    <div class="row">
+      <p class="navbar-text pull-right">
+        <% if user_signed_in? %>
+          Hi <strong><%= current_user.name %></strong>&nbsp;&nbsp;&nbsp;
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+
+          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> |
+          <!-- <img src="assets/fb_login.png" height="25" width="25"/> -->
+
+          <%= link_to image_tag("fb_login.png", :border => 0, :alt => 'Facebook Login', :title => 'Facebook Login'), user_omniauth_authorize_path(:facebook), :class => 'navbar-link'%>
+          <%= link_to 'Facebook Login', user_omniauth_authorize_path(:facebook), :class => 'navbar-link'%>
+        <% end %></p>
+      </div>
+      <hr>
+      <div class="row" id="main_div">
+        <h3>Edit User Information</h3>
+
+        <form>
+        </form>
+      </div>
+
+    </div>
+</div>

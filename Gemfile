@@ -38,3 +38,10 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :assets do
+  gem 'twitter-bootstrap-rails'
+end
+
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'pry-rails'
