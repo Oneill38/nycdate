@@ -11,18 +11,15 @@
       <div class="search_box">
        <h3>Events</h3>
        <% @results.each do |single_event| %>
-       <img src="<%= single_event[:image_url] %>" class="event_images" width="200" height="200"/>
+       <% if single_event[:image_url] %>
+          <img src="<%= single_event[:image_url] %>" class="event_images"/>
+       <% end %>
        <br>
         <span class="label">Title: </span><span class="event"><%= single_event[:title] %></span>
         <br>
         <span class="label">Link:</span>
         <span class="event"><a href="<%= single_event[:url] %>" target="_blank"><em>Event Link</em></a></span>
         <br>
-        <h5><span class="label">Description:</span></h5>
-        <p class="description">
-          <span class="event"><%=sanitize single_event[:description], tags: %w(p) %></span>
-        </p>
-
         <span class="label">Venue Address:</span>
         <span class="event"><%= single_event[:venue_address] %></span>
         <br>
@@ -35,6 +32,10 @@
         <span class="label">Date/Time:</span>
         <span class="event"><%= single_event[:start_time] %></span>
         <br>
+        <h5><span class="label">Description:</span></h5>
+        <p class="description">
+          <span class="event"><%=sanitize single_event[:description], tags: %w(p) %></span>
+        </p>
         <hr>
         <% end %>
 

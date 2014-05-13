@@ -25,8 +25,9 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.search_events
-    data = HTTParty.get("http://api.eventful.com/json/events/search?app_key=#{ENV['APP_KEY']}&date=#{@date_query}&location=New+York&within=15")
+  def self.search_events(date_input)
+    # binding.pry
+    data = HTTParty.get("http://api.eventful.com/json/events/search?app_key=#{ENV['APP_KEY']}&date=#{date_input}&location=New+York&within=15&page_size=50")
     json_data = JSON.parse(data)
 
     results = []
@@ -39,22 +40,8 @@ class User < ActiveRecord::Base
       json_data["events"]["event"].each do |event|
         single_event = {}
 
-        if event.nil? || event.empty?
-          flash[:error] = "There are no events for this date."
-          return false
-        elsif event["image"]["medium"]["url"].nil?
+          single_event[:image_url] = event["image"] ? event["image"]["medium"]["url"] : ""
 
-          single_event[:title] = event["title"]
-          single_event[:url] = event["url"]
-          single_event[:description] = event["description"]
-          single_event[:address] = event["venue_address"]
-          single_event[:city_name] = event["city_name"]
-          single_event[:region_name] = event["region_name"]
-          single_event[:start_time] = event["start_time"]
-
-          results << single_event
-        else
-          single_event[:image_url] = event["image"]["medium"]["url"]
           single_event[:title] = event["title"]
           single_event[:url] = event["url"]
           single_event[:description] = event["description"]
@@ -65,8 +52,6 @@ class User < ActiveRecord::Base
           results << single_event
         end
       end
-    end
-
     results
   end
 
