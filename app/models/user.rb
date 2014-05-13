@@ -25,28 +25,34 @@ class User < ActiveRecord::Base
     end
   end
 
-  APP_KEY = ENV[APP_KEY]
-
   def self.search_events
-    data = HTTParty.get("http://api.eventful.com/json/events/search?app_key=#{APP_KEY}")
+    data = HTTParty.get("http://api.eventful.com/json/events/search?app_key=#{ENV['APP_KEY']}&location=New+York")
     json_data = JSON.parse(data)
 
-    results = {}
+    results = []
+    # binding.pry
 
     if json_data["events"]["event"].include?('error')
+
       flash[:error] = "Data not found"
       return false
     else
-      json_data["events"]["event"].map do |event|
-        results[:title] = event["title"]
-        results[:url] = event["url"]
-        results[:description] = event["description"]
-        results[:address] = event["venue_address"]
-        results[:city_name] = event["city_name"]
-        results[:region_name] = event["region_name"]
-        results[:start_time] = event["start_time"]
+      # binding.pry
+      json_data["events"]["event"].each do |event|
+        single_event = {}
+
+        single_event[:title] = event["title"]
+        single_event[:url] = event["url"]
+        single_event[:description] = event["description"]
+        single_event[:address] = event["venue_address"]
+        single_event[:city_name] = event["city_name"]
+        single_event[:region_name] = event["region_name"]
+        single_event[:start_time] = event["start_time"]
+        results << single_event
       end
     end
+    # binding.pry
+    results
   end
 
 

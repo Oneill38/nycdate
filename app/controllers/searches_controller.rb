@@ -1,8 +1,8 @@
 class SearchesController < ApplicationController
   def index
     @user = User.find(current_user.id)
-    @event_listings = User.search_events
-    redirect_to searches_path
+    @results = User.search_events
+
   end
 
   def create
@@ -13,8 +13,9 @@ class SearchesController < ApplicationController
        @search = Search.new
        @search.save
        @user.searches << @search
+       redirect_to searches_path
     end
-     redirect_to searches_path
-  end
+
+
 
 end
