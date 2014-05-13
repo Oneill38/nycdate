@@ -26,7 +26,6 @@ class User < ActiveRecord::Base
   end
 
   def self.search_events
-
     data = HTTParty.get("http://api.eventful.com/json/events/search?app_key=g3dmNGP3mCdV23PP&location=New+York")
     json_data = JSON.parse(data)
 
