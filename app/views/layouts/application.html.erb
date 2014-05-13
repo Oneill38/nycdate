@@ -44,13 +44,16 @@
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
             <li><a href="/users/:id">Profile</a></li>
-            <li><a href="/users">Sign up/Login</a></li>
+            <% if !current_user %>
+              <li><a href="/users">Sign up/Login</a></li>
+            <% end %>
             <li class="dropdown">
               <a href="/searches" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li class="dropdown-header"></li>
                 <li><a href="/searches">All</a></li>
-                <li><a href="#">CONCERTS</a></li>
+                <li><a href="/searches">Concerts</a></li>
+                <li><a href="/searches/new">Filtered Search</a></li>
               </ul>
             </li>
           </ul>

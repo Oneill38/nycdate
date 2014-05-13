@@ -1,6 +1,7 @@
 class SearchesController < ApplicationController
   def index
     @user = User.find(current_user.id)
+    @date_query = params[:date_input]
     @results = User.search_events
 
   end
@@ -16,13 +17,15 @@ class SearchesController < ApplicationController
 
   def create
     @user = User.find(current_user.id)
-    # @hashtag = params[:hashtag]
+    @date_query = params[:date_input]
 
     @event_listings = User.search_events
-       @search = Search.new
-       @search.save
-       @user.searches << @search
-       redirect_to searches_path
+      # binding.pry
+      # @search = Search.new
+      # @search.save
+      # @user.searches << @search
+
+      redirect_to searches_path
     end
 
 end

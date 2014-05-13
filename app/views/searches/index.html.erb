@@ -4,16 +4,19 @@
     <% if flash[:error] %>
       <%= flash[:error] %>
     <% end %>
+
     </div>
     <!-- Events API Search Info -->
     <div class="results">
       <div class="search_box">
        <h3>Events</h3>
        <% @results.each do |single_event| %>
+       <img src="<%= single_event[:image_url] %>" class="event_images" width="200" height="200"/>
+       <br>
         <span class="label">Title: </span><span class="event"><%= single_event[:title] %></span>
         <br>
         <span class="label">Link:</span>
-        <span class="event"><a href="<%= single_event[:url] %>"><em>Event Link</em></a></span>
+        <span class="event"><a href="<%= single_event[:url] %>" target="_blank"><em>Event Link</em></a></span>
         <br>
         <h5><span class="label">Description:</span></h5>
         <p class="description">
@@ -34,6 +37,8 @@
         <br>
         <hr>
         <% end %>
+
+        <!-- CONCERT RESULTS -->
       </div>
     </div>
 

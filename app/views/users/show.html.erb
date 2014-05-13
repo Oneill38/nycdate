@@ -2,7 +2,21 @@
   <div class="users_container">
     <div class="row">
         <div class="fb-send" data-href="https://www.google.com/" data-width="30" data-height="10" data-colorscheme="light"></div>
-
     </div>
+
+  <div class="row" id="main_div_user">
+    <h3>Profile</h3>
+    <% if current_user %>
+      <img src="<%= current_user.image %>" width="60px" height="60px"/>
+      <br>
+      <br>
+      <ul class="profile">
+        <li><span class="label">Name: </span><%= current_user.name%></li>
+        <li><span class="label">Email:</span> <%= current_user.email%></li>
+        <li><span class="label">Member since: </span><%= current_user.created_at%></li>
+
+      </ul>
+    <% end %>
   </div>
+</div>
 </div>

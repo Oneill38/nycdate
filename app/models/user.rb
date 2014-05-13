@@ -26,32 +26,47 @@ class User < ActiveRecord::Base
   end
 
   def self.search_events
-    data = HTTParty.get("http://api.eventful.com/json/events/search?app_key=#{ENV['APP_KEY']}&location=New+York")
+    data = HTTParty.get("http://api.eventful.com/json/events/search?app_key=#{ENV['APP_KEY']}&date=#{@date_query}&location=New+York&within=15")
     json_data = JSON.parse(data)
 
     results = []
     # binding.pry
 
-    if json_data["events"]["event"].include?('error')
-
+    if json_data.nil? || json_data.empty?
       flash[:error] = "Data not found"
       return false
     else
-      # binding.pry
       json_data["events"]["event"].each do |event|
         single_event = {}
 
-        single_event[:title] = event["title"]
-        single_event[:url] = event["url"]
-        single_event[:description] = event["description"]
-        single_event[:address] = event["venue_address"]
-        single_event[:city_name] = event["city_name"]
-        single_event[:region_name] = event["region_name"]
-        single_event[:start_time] = event["start_time"]
-        results << single_event
+        if event.nil? || event.empty?
+          flash[:error] = "There are no events for this date."
+          return false
+        elsif event["image"]["medium"]["url"].nil?
+
+          single_event[:title] = event["title"]
+          single_event[:url] = event["url"]
+          single_event[:description] = event["description"]
+          single_event[:address] = event["venue_address"]
+          single_event[:city_name] = event["city_name"]
+          single_event[:region_name] = event["region_name"]
+          single_event[:start_time] = event["start_time"]
+
+          results << single_event
+        else
+          single_event[:image_url] = event["image"]["medium"]["url"]
+          single_event[:title] = event["title"]
+          single_event[:url] = event["url"]
+          single_event[:description] = event["description"]
+          single_event[:address] = event["venue_address"]
+          single_event[:city_name] = event["city_name"]
+          single_event[:region_name] = event["region_name"]
+          single_event[:start_time] = event["start_time"]
+          results << single_event
+        end
       end
     end
-    # binding.pry
+
     results
   end
 
