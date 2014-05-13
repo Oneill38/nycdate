@@ -1,0 +1,31 @@
+<!-- show.html.erb -->
+
+<!-- Events API Search Info -->
+<div class="search_box">
+ <h3> <%= @event_listings %> Events</h3>
+  <p>Title: <br>
+  <span class="event"><%= @event_listings[:title] %>ºF</span>
+  <br>
+  <span class="event"><%= @event_listings[:url] %>ºC</span>
+  <br>
+  Description:
+  <br>
+  <span class="event"><%= @event_listings[:description] %></span>
+  <br>
+  Venue Address:
+  <br>
+  <span class="event"><%= @event_listings[:venue_address] %></span>
+  <br>
+  City Name:
+  <br>
+  <span class="event"><%= @event_listings[:city_name] %></span>
+  <br>
+  Region Name:
+  <br>
+  <span class="event"><%= @event_listings[:region_name] %></span>
+    <br>
+  Date/Time:
+  <br>
+  <span class="event"><%= @event_listings[:start_time] %></span>
+  </p>
+</div>
