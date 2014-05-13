@@ -1,3 +1,7 @@
+ul {
+  list-style-type: none;
+}
+
 #background_users {
   background-image: url('central_park.jpg');
   background-size: cover;
@@ -70,4 +74,40 @@ img.img-circle {
 #main_div {
   width: 600px;
   margin: 0 auto;
+}
+
+#main_div_user {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#main_div_user ul {
+  margin-left: -40px;
+}
+
+#main_div form {
+  padding-top: 50px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+#main_div form input {
+  width: 200px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+#main_div form input[type="submit"] {
+  width: 80px;
+  background-color: aqua;
+}
+
+footer {
+  padding: 10px;
+}
+
+.search_box {
+  padding: 10px;
 }

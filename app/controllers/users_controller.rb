@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     @user = User.where(id: params[:id])
   end
 
+
+
 end
 
 

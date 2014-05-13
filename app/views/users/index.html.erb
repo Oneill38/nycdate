@@ -16,11 +16,19 @@
         <% end %></p>
       </div>
       <hr>
-      <div class="row" id="main_div">
-        <h3>Edit User Information</h3>
+      <div class="row" id="main_div_user">
+        <h3>Profile</h3>
+        <img src="<%= current_user.image %>" width="60px" height="60px"/>
+        <br>
+        <br>
+        <ul>
+          <li>Name: <%= current_user.name%></li>
+          <li>Email: <%= current_user.email%></li>
+          <li>Member since: <%= current_user.created_at%></li>
 
-        <form>
-        </form>
+        </ul>
+
+
       </div>
 
     </div>
