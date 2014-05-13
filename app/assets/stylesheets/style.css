@@ -2,6 +2,11 @@ ul {
   list-style-type: none;
 }
 
+.label {
+  color: aqua;
+  font-size: 1.1em;
+}
+
 #background_users {
   background-image: url('central_park.jpg');
   background-size: cover;
@@ -111,7 +116,7 @@ footer {
 
 .results {
   position: relative;
-  top: 125px;
+  top: 50px;
   width: 600px;
   height: 700px;
   background-color: black;
@@ -142,5 +147,10 @@ footer {
  -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
          transition: height 0.3s;
+}
+
+p.description {
+  width: 500px;
+  padding-left: 10px;
 }
 
