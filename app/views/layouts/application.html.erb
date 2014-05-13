@@ -11,8 +11,9 @@
   <script>
     window.fbAsyncInit = function() {
       FB.init({
-        appId      : '{your-app-id}',
+        appId      : '284914335022715',
         xfbml      : true,
+        status     : true,
         version    : 'v2.0'
       });
     };
@@ -44,17 +45,17 @@
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
             <li><a href="/users/:id">Profile</a></li>
-            <li><a href="/users">Sign up/Login</a></li>
+            <% if !current_user %>
+              <li><a href="/users">Sign up/Login</a></li>
+            <% end %>
             <li class="dropdown">
-              <a href="/users/user_id/searches" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
+              <a href="/searches" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li class="dropdown-header"></li>
-                <li><a href="/users/user_id/searches">All</a></li>
-                <li><a href="#">Sports</a></li>
-                <li class="divider">Concerts</li>
-                <li><a href="#">Food</a></li>
-                <li><a href="#">Indoors</a></li>
-                <li><a href="#">Outdoors</a></li>
+                <li><a href="/searches">All</a></li>
+                <li><a href="/searches/new">Search By Date</a></li>
+                <li><a href="/concerts">CONCERTS</a></li>
+                <li><a href="/sports">SPORTS</a></li>
               </ul>
             </li>
           </ul>

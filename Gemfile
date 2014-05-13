@@ -44,4 +44,5 @@ end
 
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'httparty'
 gem 'pry-rails'
