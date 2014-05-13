@@ -4,34 +4,37 @@
     <% if flash[:error] %>
       <%= flash[:error] %>
     <% end %>
-
-    <%= render partial: "search_form" %>
-
-
     </div>
     <!-- Events API Search Info -->
-    <div class="search_box">
-     <h3> <% @results.each do |single_event| %> Events</h3>
-      Title: <span class="event"><%= single_event[:title] %></span>
-      <br>
-      Link:
-      <span class="event"><a href="<%= single_event[:url] %>">Link to Event</a></span>
-      Description:<span class="event"><%=sanitize single_event[:description], tags: %w(p) %></span>
-      <br>
-      Venue Address:
-      <span class="event"><%= single_event[:venue_address] %></span>
-      <br>
-      City Name:
-      <span class="event"><%= single_event[:city_name] %></span>
-      <br>
-      Region Name:
-      <span class="event"><%= single_event[:region_name] %></span>
-      <br>
-      Date/Time:
-      <span class="event"><%= single_event[:start_time] %></span>
-      <br>
-      <hr>
-      <% end %>
+    <div class="results">
+      <div class="search_box">
+       <h3>Events</h3>
+       <% @results.each do |single_event| %>
+        <span class="label">Title: </span><span class="event"><%= single_event[:title] %></span>
+        <br>
+        <span class="label">Link:</span>
+        <span class="event"><a href="<%= single_event[:url] %>"><em>Event Link</em></a></span>
+        <br>
+        <h5><span class="label">Description:</span></h5>
+        <p class="description">
+          <span class="event"><%=sanitize single_event[:description], tags: %w(p) %></span>
+        </p>
+
+        <span class="label">Venue Address:</span>
+        <span class="event"><%= single_event[:venue_address] %></span>
+        <br>
+        <span class="label">City Name:</span>
+        <span class="event"><%= single_event[:city_name] %></span>
+        <br>
+        <span class="label">Region Name:</span>
+        <span class="event"><%= single_event[:region_name] %></span>
+        <br>
+        <span class="label">Date/Time:</span>
+        <span class="event"><%= single_event[:start_time] %></span>
+        <br>
+        <hr>
+        <% end %>
+      </div>
     </div>
 
   </div>
