@@ -16,4 +16,5 @@ class SearchesController < ApplicationController
     end
      redirect_to searches_path
   end
+
 end
