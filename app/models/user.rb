@@ -55,5 +55,4 @@ class User < ActiveRecord::Base
     results
   end
 
-
 end
