@@ -154,3 +154,14 @@ p.description {
   padding-left: 10px;
 }
 
+#dates {
+  text-align: center;
+}
+
+#start {
+  color: black;
+}
+
+#end {
+  color: black;
+}
