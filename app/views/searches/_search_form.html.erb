@@ -1,12 +1,12 @@
   <div class="search">
    <%= form_tag("/searches", method: "POST") do %>
       <%= label_tag(:date, "Date") %>
-      <%= select_tag(:date_input, options_for_select([['All', 'All'], ['Future', 'Future'], ['Today','Today'],['This Week', 'This Week'], ['Next Week', 'Next Week']])) %>
+      <%= select_tag(:date_input, options_for_select([['Future', 'Future'], ['Today','Today'],['This Week', 'This Week'], ['Next Week', 'Next Week']])) %>
       <br>
 
       <%= submit_tag("Search") %>
     <% end %>
   </div>
    <!--End of search form-->
-   <!--End of search form-->
+
 
