@@ -1,0 +1,48 @@
+<div id="background_searches">
+  <div class="users_container">
+    <div id="main_div">
+      <h2>Saved Events:</h2>
+        <% if @favorites.nil? %>
+          <p>No events saved yet</p>
+        <% else %>
+          <% @favorites.each do |single_event| %>
+           <% if single_event[:image_url] %>
+              <img src="<%= single_event[:image_url] %>" class="event_images"/>
+           <% end %>
+           <br>
+            <span class="label">Title: </span>
+            <span class="event"><%= single_event[:title] %></span>
+            <br>
+            <span class="label">Link:</span>
+            <span class="event"><a href="<%= single_event[:url] %>" target="_blank"><em>Event Link</em></a></span>
+            <br>
+            <% if single_event[:price] %>
+              <span class="label">Price:</span>
+              <span class="event"><%= single_event[:price] %></span>
+           <% end %>
+           <br>
+            <span class="label">Venue Address:</span>
+            <span class="event"><%= single_event[:venue_address] %></span>
+            <br>
+            <span class="label">City Name:</span>
+            <span class="event"><%= single_event[:city_name] %></span>
+            <br>
+            <span class="label">Region Name:</span>
+            <span class="event"><%= single_event[:region_name] %></span>
+            <br>
+            <span class="label">Date/Time:</span>
+            <span class="event"><%= single_event[:start_time] %></span>
+            <br>
+            <h5><span class="label">Description:</span></h5>
+            <p class="description">
+              <span class="event"><%=sanitize single_event[:description], tags: %w(p) %></span>
+            </p>
+
+          <%= form_for(single_event, method: "delete") do |f| %>
+            <%= f.submit("Delete") %>
+          <% end %>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>

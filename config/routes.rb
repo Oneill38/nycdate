@@ -7,14 +7,14 @@ Rails.application.routes.draw do
    root 'welcome#index'
    resources :users
    resources :searches
-
-
+   resources :favorites
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
    get '/concerts' => 'concerts#index'
    get '/sports' => 'sports#index'
    get '/theaters' => 'theaters#index'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

@@ -15,7 +15,8 @@
           <img src="<%= single_event[:image_url] %>" class="event_images"/>
        <% end %>
        <br>
-        <span class="label">Title: </span><span class="event"><%= single_event[:title] %></span>
+        <span class="label">Title: </span>
+        <span class="event"><%= single_event[:title] %></span>
         <br>
         <span class="label">Link:</span>
         <span class="event"><a href="<%= single_event[:url] %>" target="_blank"><em>Event Link</em></a></span>
@@ -41,14 +42,19 @@
         <p class="description">
           <span class="event"><%=sanitize single_event[:description], tags: %w(p) %></span>
         </p>
-        <!-- Save Search Functionality -->
-       <form action="/searches" method="POST">
+        <!--- Save Search Functionality -->
+       <form action="/favorites" method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="hashtag" value=<%= @hashtag %> />
-        <input type="hidden" name="img_url" value=<%= pic %> />
-        <input type="hidden" name="search_id" value=<%=@last_search.id %> />
-        <input type="hidden" name="weather" value=<%=@weather_results %> />
-        <input type="submit" value="Favorite"/>
+        <input type="hidden" name="image_url" value=<%= single_event[:image_url] %> />
+        <input type="hidden" name="title" value=<%= single_event[:title] %> />
+        <input type="hidden" name="url" value=<%= single_event[:url] %> />
+        <input type="hidden" name="price" value=<%= single_event[:price] %> />
+        <input type="hidden" name="venue_address" value=<%= single_event[:venue_address] %> />
+        <input type="hidden" name="city_name" value=<%= single_event[:city_name] %> />
+        <input type="hidden" name="region_name" value=<%= single_event[:region_name] %> />
+        <input type="hidden" name="start_time" value=<%= single_event[:start_time] %> />
+        <input type="hidden" name="description" value=<%= single_event[:description] %> />
+        <input type="submit" value="Save"/>
       </form>
 
         <hr>

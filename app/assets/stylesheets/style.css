@@ -245,3 +245,29 @@ form.new_user input[type="submit"] {
   text-align: center;
 }
 
+input#concert_submit {
+  color: black;
+}
+
+input#concert_submit:hover {
+  color: aqua;
+}
+
+input {
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+       -o-border-radius: 5px;
+          border-radius: 5px;
+}
+
+input[type="submit"] {
+-webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+     -o-border-radius: 5px;
+        border-radius: 5px;
+      color: black;
+}
+
+input[type="submit"]:hover {
+  color: magenta;
+}
