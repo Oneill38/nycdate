@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
   def index
-    @user = User.find(current_user.id)
+    # @user = User.find(current_user.id)
     date_query = params[:date_input]
     @results = User.search_events(date_query)
 

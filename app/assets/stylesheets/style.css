@@ -1,3 +1,6 @@
+a {
+  padding: 10px;
+}
 a:hover {
   color: magenta;
 }
@@ -10,7 +13,7 @@ ul.profile li {
   margin-left: -10px;
 }
 
-h3 {
+h2, h3 {
   text-align: center;
   color: aqua;
 }
@@ -207,4 +210,35 @@ footer {
 #sportsDates {
   text-align: center;
 }
+
+.new_user div {
+  width: 160px;
+  margin: 0 auto;
+}
+
+form.new_user {
+  width: 500px;
+  height: 500px;
+  background-color: silver;
+  margin: 0 auto;
+  padding: 10px;
+  padding-top: 50px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+       -o-border-radius: 5px;
+          border-radius: 5px;
+}
+
+form.new_user input {
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+       -o-border-radius: 5px;
+          border-radius: 5px;
+}
+
+form.new_user input[type="submit"] {
+  background-color: aqua;
+}
+
+
 
