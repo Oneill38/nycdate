@@ -20,6 +20,11 @@
         <span class="label">Link:</span>
         <span class="event"><a href="<%= single_event[:url] %>" target="_blank"><em>Event Link</em></a></span>
         <br>
+        <% if single_event[:price] %>
+          <span class="label">Price:</span>
+          <span class="event"><%= single_event[:price] %></span>
+       <% end %>
+       <br>
         <span class="label">Venue Address:</span>
         <span class="event"><%= single_event[:venue_address] %></span>
         <br>
@@ -36,6 +41,14 @@
         <p class="description">
           <span class="event"><%=sanitize single_event[:description], tags: %w(p) %></span>
         </p>
+<!--         <form action="/searches" method="POST">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name="hashtag" value=<%= @hashtag %> />
+          <input type="hidden" name="img_url" value=<%= pic %> />
+          <input type="hidden" name="search_id" value=<%=@last_search.id %> />
+          <input type="hidden" name="weather" value=<%=@weather_results %> />
+          <input type="submit" value="Save"/>
+        </form> -->
         <hr>
         <% end %>
 
