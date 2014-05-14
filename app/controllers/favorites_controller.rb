@@ -5,9 +5,9 @@ class FavoritesController < ApplicationController
 
   def create
     @user = User.find_by(id: current_user.id)
-    @fav = Favorite.new(image_url: params[:image_url], title: params[:title], url: params[:url], price: params[:price], venue_address: params[:venue_address], city_name: params[:city_name], region_name: params[:region_name], start_time: params[:start_time], description: params[:description])
+    @fav = Favorite.create(image_url: params[:image_url], title: params[:title], url: params[:url], price: params[:price], venue_address: params[:venue_address], city_name: params[:city_name], region_name: params[:region_name], start_time: params[:start_time], description: params[:description])
 
-    @fav.save
+    @user.favorites << @fav
 
     binding.pry
 

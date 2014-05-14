@@ -5,6 +5,7 @@ var Theater = {
       $(".theaterContainer").empty();
       var startDate = $("#start").val();
       var endDate = $("#end").val();
+
       $.ajax({
         url: "/theaters",
         type: "GET",

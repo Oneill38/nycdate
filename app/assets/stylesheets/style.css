@@ -1,16 +1,9 @@
+/* General stylings */
 a {
   padding: 10px;
 }
 a:hover {
   color: magenta;
-}
-
-ul.profile {
-  list-style-type: none;
-}
-
-ul.profile li {
-  margin-left: -10px;
 }
 
 h2, h3 {
@@ -22,6 +15,10 @@ h2, h3 {
 #logo {
   font-size: 2em;
   color: aqua;
+}
+
+#logo:hover {
+  color: magenta;
 }
 
 .label {
@@ -46,9 +43,17 @@ h2, h3 {
 }
 
 /* Welcome Page */
-
 div.item {
   background-color: white;
+}
+
+.carousel-caption .btn {
+  background-color: black;
+  color: aqua;
+}
+
+.carousel-caption .btn:hover {
+  color: magenta;
 }
 
 .img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
@@ -88,10 +93,29 @@ img.img-circle {
   margin: 0 auto;
 }
 
-/* Div containers for every page except 'Welcome' */
+/* User's Profile Page */
+ul.profile {
+  list-style-type: none;
+}
+
+ul.profile li {
+  margin-left: -10px;
+}
+
+
+/* Container div containers for every page except 'Welcome' */
 .users_container {
-  width: 700px;
+  width: 960px;
   height: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+  padding: 5px;
+  background-color: silver;
+}
+
+#general_events {
+  width: 700px;
+  height: 600px;
   margin: 0 auto;
   opacity: 0.9;
   padding: 5px;
@@ -126,23 +150,29 @@ img.img-circle {
 }
 
 #main_div form input {
-  width: 200px;
+  width: 180px;
   -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+       -o-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
 }
 
 #main_div form input[type="submit"] {
-  width: 80px;
-  background-color: aqua;
+  width: 70px;
+  color: aqua;
+  background-color: black;
 }
+
+#main_div form input[type="submit"]:hover {
+  color: magenta;
+}
+
 
 /* ----- Event Search Results Stylings ------*/
 .results {
   position: relative;
   top: 50px;
-  width: 600px;
+  width: 800px;
   height: 700px;
   background-color: black;
   color: white;
@@ -159,7 +189,7 @@ img.img-circle {
 }
 
 .search_box {
-  width: 600px;
+  width:750px;
   margin: 0px auto;
   position: relative;
   padding: 20px;
@@ -172,6 +202,18 @@ img.img-circle {
  -webkit-transition: height 0.3s;
     -moz-transition: height 0.3s;
          transition: height 0.3s;
+}
+
+img.search_category_images {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+
+div.pam {
+  z-index: 5;
+  margin-right: 100px;
 }
 
 /* events descriptions */
@@ -211,6 +253,8 @@ footer {
   text-align: center;
 }
 
+
+/* New User sign up form */
 .new_user div {
   width: 160px;
   margin: 0 auto;
@@ -240,7 +284,7 @@ form.new_user input[type="submit"] {
   background-color: aqua;
 }
 
-
+/* Theater/concert searches */
 #theaterDates {
   text-align: center;
 }
@@ -260,6 +304,12 @@ input {
           border-radius: 5px;
 }
 
+select {
+  width: 150px;
+  font-size: 1.1em;
+}
+
+
 input[type="submit"] {
 -webkit-border-radius: 5px;
    -moz-border-radius: 5px;
@@ -269,5 +319,14 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
+  color: magenta;
+}
+
+/* delete buttons for saved favorites page */
+.favorites #main_div form input[type="submit"] {
+  margin-left: -120px;
+}
+
+.favorites #main_div form input[type="submit"]:hover {
   color: magenta;
 }

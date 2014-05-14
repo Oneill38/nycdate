@@ -2,9 +2,11 @@
   <div class="users_container">
     <div class="results">
       <div class="search_box">
+      <img src="assets/circle2.jpg" alt="picture of " title="picture of " class="search_category_images"/>
+      <h2>Concert Search</h2>
         <div id='dates'>
-          <input id="start" type="text" name="start_date" placeholder="yyyy-mm-dd">
-          <input id="end" type="text" name="end_date" placeholder="yyyy-mm-dd">
+          <input id="start" type="date" name="start_date">
+          <input id="end" type="date" name="end_date">
           <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
           <input id="concert_submit" type="submit" value="Go!">
         </div>
