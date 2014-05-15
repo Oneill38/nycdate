@@ -5,7 +5,7 @@ $(document).ready(function(){
     var event_search_date = $('option').val();
 
     $.ajax({
-      url: "/searches", //searches controller - not about page!
+      url: "/searches", //Routes to searches controller - not about page!
       type: 'POST',
       dataType: 'json',
       data: {date_input: event_search_date}
