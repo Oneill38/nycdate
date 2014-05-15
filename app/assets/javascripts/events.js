@@ -9,12 +9,12 @@ $(document).ready(function(){
       type: 'POST',
       dataType: 'json',
       data: {date_input: event_search_date}
-    }).done(function(data){
-      $.each(data, function(index, value){
-        var event_div = $('<div>').html(value);
-        $('#general_event_results').append(event_div);
-    });
-  });
+      }).done(function(data){
+        $.each(data, function(index, value){
+          var event_div = $('<div>').html(value);
+          $('#general_event_results').append(event_div);
+        });
+      });
 
   });
 });
