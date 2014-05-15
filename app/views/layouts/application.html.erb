@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Rendezvous NYC</title>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,200,300' rel='stylesheet' type='text/css'>
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
@@ -61,6 +62,9 @@
             <li><a href="/favorites">Favorites</a></li>
           </ul>
           <div id="current_user_name">
+           <% if current_user %>
+              <img src="<%= current_user.image %>" width="60px" height="60px"/>
+          <% end %>
             <% if user_signed_in? %>
             <a href="/users"><strong><%= current_user.email %></strong></a>
             <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
