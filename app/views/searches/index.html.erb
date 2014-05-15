@@ -7,7 +7,7 @@
 
     </div>
     <!-- Events API Search Info -->
-    <div class="results">
+    <div class="results general_events">
       <div class="search_box">
        <h3>Events</h3>
        <% @results.each do |single_event| %>
@@ -46,6 +46,7 @@
        <form action="/favorites" method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <input type="hidden" name="image_url" value=<%= single_event[:image_url] %> />
+        <input type="hidden" name="image_url" value=The event is fksahgkljahgrahkeraj />
         <input type="hidden" name="title" value=<%= single_event[:title] %> />
         <input type="hidden" name="url" value=<%= single_event[:url] %> />
         <input type="hidden" name="price" value=<%= single_event[:price] %> />
@@ -53,8 +54,7 @@
         <input type="hidden" name="city_name" value=<%= single_event[:city_name] %> />
         <input type="hidden" name="region_name" value=<%= single_event[:region_name] %> />
         <input type="hidden" name="start_time" value=<%= single_event[:start_time] %> />
-        <input type="hidden" name="description" value=<%=sanitize single_event[:description], tags: %w(p) %> />
-
+        <input type="hidden" name="description" value="<%=sanitize single_event[:description], tags: %w(p) %>" />
 
         <input type="submit" value="Save"/>
       </form>
