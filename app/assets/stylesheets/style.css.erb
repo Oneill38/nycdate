@@ -1,0 +1,374 @@
+/* General stylings */
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+a {
+  padding: 10px;
+}
+
+a:hover {
+  color: magenta;
+}
+
+h1 {
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.6);
+}
+
+h2, h3 {
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.6);
+  text-align: center;
+  color: #00B6FF;
+}
+
+input[type="text"], input[type="date"] {
+  box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.08);
+  background-color: #00B6FF;
+}
+
+/* In navbar header */
+#logo {
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.6);
+  font-size: 2em;
+  color: #00B6FF;
+}
+
+#logo:hover {
+  color: magenta;
+}
+
+.label {
+  color: #00B6FF;;
+  font-size: 1.1em;
+}
+
+.container {
+  background-color: white;
+}
+
+.navbar {
+  border: 0px solid white;
+  margin-bottom: 5px;
+}
+
+#current_user_name {
+  width: 350px;
+  float: right;
+  color: #00B6FF;
+  margin-top: 13px;
+}
+
+#current_user_name img {
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+       -o-border-radius: 10px;
+          border-radius: 10px;
+}
+
+.navbar-inverse, .navbar-nav > li > a:focus, .navbar-inverse, .navbar-nav > li > a:hover {
+  color: #00B6FF !important;
+}
+
+/* Background images for different pages */
+#background_users {
+  background-image: url('central_park.jpg');
+  background-size: cover;
+}
+
+#background_users_show {
+  background-image: url('nyc-aerial.jpg');
+  background-size: cover;
+}
+
+#background_searches {
+  background-image: url('NewYork.jpg');
+  background-size: cover;
+}
+
+/* Welcome Page */
+div.item {
+  background-color: white;
+}
+
+.carousel-caption .btn {
+  background-color: black;
+  color: aqua;
+}
+
+.carousel-caption .btn:hover {
+  color: magenta;
+}
+
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+  margin: 0 auto;
+}
+
+.marketing {
+  padding-top: 50px;
+}
+
+img.img-circle {
+  display: block;
+  margin: 0 auto;
+}
+
+.marketing img.img-circle:hover {
+  -webkit-transform: scale(1.15, 1.15);
+      -ms-transform: scale(1.15, 1.15);
+          transform: scale(1.15, 1.15);
+  border: 2px solid aqua;
+}
+
+.marketing .row {
+  width: 1100px;
+  margin: 0 auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.marketing div.col-lg-4 {
+  width: 350px;
+}
+
+.marketing .row p, .marketing .row h2 {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+/* User's Profile Page */
+ul.profile {
+  list-style-type: none;
+}
+
+ul.profile li {
+  margin-left: -10px;
+}
+
+/* Container div containers for every page except 'Welcome' */
+.users_container {
+  width: 960px;
+  height: 800px;
+  margin: 0 auto;
+  opacity: 0.98;
+  padding: 5px;
+  background-color: silver;
+}
+
+#general_events {
+  width: 700px;
+  height: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+  padding: 5px;
+  background-color: silver;
+}
+
+#main_div {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#main_div_user {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#main_div_user ul {
+  margin-left: -40px;
+}
+
+#main_div form {
+  padding-top: 50px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+#main_div form input {
+  width: 180px;
+  -webkit-border-radius: 10px;
+       -o-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+
+#main_div form input[type="submit"] {
+  width: 70px;
+  color: #00B6FF;
+  background-color: black;
+}
+
+#main_div form input[type="submit"]:hover {
+  color: magenta;
+}
+
+
+/* ----- Event Search Results Stylings ------*/
+.results {
+  position: relative;
+  top: 50px;
+  width: 600px;
+  height: 700px;
+  background-color: black;
+  color: white;
+  opacity: 0.8;
+  margin: 0 auto;
+  overflow: auto;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+       -o-border-radius: 10px;
+          border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+     -moz-box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+         box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
+}
+
+.search_box {
+  width:600px;
+  margin: 0px auto;
+  position: relative;
+  padding: 20px;
+  opacity: 0.8;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+       -o-border-radius: 5px;
+          border-radius: 5px;
+          z-index: 1000;
+ -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+         transition: height 0.3s;
+}
+
+img.search_category_images {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+
+div.pam {
+  z-index: 5;
+  margin-right: 100px;
+}
+
+/* events descriptions */
+p.description {
+  width: 500px;
+  padding-left: 10px;
+}
+
+.event_images {
+  display: block;
+  margin: 0 auto;
+}
+
+.fb-send {
+  margin-top: 25px;
+  margin-left: 65px;
+}
+
+footer {
+  padding: 10px;
+}
+
+#dates {
+  text-align: center;
+}
+
+#start {
+  color: black;
+}
+
+#end {
+  color: black;
+}
+
+#sportsDates {
+  text-align: center;
+}
+
+/* New User sign up form */
+.new_user div {
+  width: 160px;
+  margin: 0 auto;
+}
+
+form.new_user {
+  width: 500px;
+  height: 500px;
+  background-color: silver;
+  margin: 0 auto;
+  padding: 10px;
+  padding-top: 50px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+       -o-border-radius: 3px;
+          border-radius: 3px;
+  background: rgba(57,60,61,0.8);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+          box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  border: 1px solid rgba(0,0,0,0.8);
+  padding: 4px;
+  line-height: 1.2;
+  float: left;
+}
+
+form.new_user input {
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+       -o-border-radius: 5px;
+          border-radius: 5px;
+}
+
+form.new_user input[type="submit"] {
+  background-color: #00B6FF;
+}
+
+/* Theater/concert searches */
+#theaterDates {
+  text-align: center;
+}
+
+input#concert_submit {
+  color: black;
+}
+
+input#concert_submit:hover {
+  color: #00B6FF;
+}
+
+input {
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+       -o-border-radius: 5px;
+          border-radius: 5px;
+}
+
+select {
+  width: 150px;
+  font-size: 1.1em;
+}
+
+input[type="submit"] {
+-webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+     -o-border-radius: 5px;
+        border-radius: 5px;
+        color: black;
+}
+
+input[type="submit"]:hover {
+  color: magenta;
+}
+
+/* delete buttons for saved favorites page */
+.favorites #main_div form input[type="submit"] {
+  margin-left: -120px;
+}
+
+.favorites #main_div form input[type="submit"]:hover {
+  color: magenta;
+}
