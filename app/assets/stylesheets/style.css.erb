@@ -1,4 +1,8 @@
 /* General stylings */
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
 a {
   padding: 10px;
 }
@@ -6,15 +10,26 @@ a:hover {
   color: magenta;
 }
 
-h2, h3 {
-  text-align: center;
-  color: aqua;
+h1 {
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.6);
 }
 
-/* In nav */
+h2, h3 {
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.6);
+  text-align: center;
+  color: #00B6FF;
+}
+
+input[type="text"], input[type="date"] {
+  box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.08);
+  background-color: #00B6FF;
+}
+
+/* In navbar header */
 #logo {
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.6);
   font-size: 2em;
-  color: aqua;
+  color: #00B6FF;
 }
 
 #logo:hover {
@@ -22,23 +37,52 @@ h2, h3 {
 }
 
 .label {
-  color: aqua;
+  color: #00B6FF;;
   font-size: 1.1em;
 }
 
-/* div stylings for different pages */
+.container {
+  background-color: white;
+}
+
+.navbar {
+  border: 0px solid white;
+  margin-bottom: 5px;
+}
+
+#current_user_name {
+  width: 350px;
+  float: right;
+  color: #00B6FF;
+  margin-top: 13px;
+}
+
+#current_user_name img {
+  width: 30px;
+  height: 30px;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+       -o-border-radius: 10px;
+          border-radius: 10px;
+}
+
+.navbar-inverse, .navbar-nav > li > a:focus, .navbar-inverse, .navbar-nav > li > a:hover {
+  color: #00B6FF !important;
+}
+
+/* Background images for different pages */
 #background_users {
-  background-image: url(image_path('central_park.jpg');
+  background-image: url('central_park.jpg');
   background-size: cover;
 }
 
 #background_users_show {
-  background-image: url(image_path('nyc-aerial.jpg'));
+  background-image: url('nyc-aerial.jpg');
   background-size: cover;
 }
 
 #background_searches {
-  background-image: url(image_path('NewYork.jpg'));
+  background-image: url('NewYork.jpg');
   background-size: cover;
 }
 
@@ -102,13 +146,12 @@ ul.profile li {
   margin-left: -10px;
 }
 
-
 /* Container div containers for every page except 'Welcome' */
 .users_container {
   width: 960px;
   height: 800px;
   margin: 0 auto;
-  opacity: 0.9;
+  opacity: 0.98;
   padding: 5px;
   background-color: silver;
 }
@@ -122,13 +165,6 @@ ul.profile li {
   background-color: silver;
 }
 
-#current_user_name {
-  width: 300px;
-  float: right;
-  color: aqua;
-  padding: 15px;
-}
-
 #main_div {
   width: 600px;
   margin: 0 auto;
@@ -137,6 +173,7 @@ ul.profile li {
 #main_div_user {
   width: 600px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 #main_div_user ul {
@@ -159,7 +196,7 @@ ul.profile li {
 
 #main_div form input[type="submit"] {
   width: 70px;
-  color: aqua;
+  color: #00B6FF;
   background-color: black;
 }
 
@@ -248,11 +285,9 @@ footer {
   color: black;
 }
 
-
 #sportsDates {
   text-align: center;
 }
-
 
 /* New User sign up form */
 .new_user div {
@@ -267,10 +302,17 @@ form.new_user {
   margin: 0 auto;
   padding: 10px;
   padding-top: 50px;
-  -webkit-border-radius: 5px;
-     -moz-border-radius: 5px;
-       -o-border-radius: 5px;
-          border-radius: 5px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+       -o-border-radius: 3px;
+          border-radius: 3px;
+  background: rgba(57,60,61,0.8);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+          box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  border: 1px solid rgba(0,0,0,0.8);
+  padding: 4px;
+  line-height: 1.2;
+  float: left;
 }
 
 form.new_user input {
@@ -281,7 +323,7 @@ form.new_user input {
 }
 
 form.new_user input[type="submit"] {
-  background-color: aqua;
+  background-color: #00B6FF;
 }
 
 /* Theater/concert searches */
@@ -294,7 +336,7 @@ input#concert_submit {
 }
 
 input#concert_submit:hover {
-  color: aqua;
+  color: #00B6FF;
 }
 
 input {
@@ -309,13 +351,12 @@ select {
   font-size: 1.1em;
 }
 
-
 input[type="submit"] {
 -webkit-border-radius: 5px;
    -moz-border-radius: 5px;
      -o-border-radius: 5px;
         border-radius: 5px;
-      color: black;
+        color: black;
 }
 
 input[type="submit"]:hover {
