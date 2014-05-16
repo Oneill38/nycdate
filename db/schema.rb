@@ -16,6 +16,18 @@ ActiveRecord::Schema.define(version: 20140514185852) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "concerts", force: true do |t|
+    t.text     "image"
+    t.string   "title"
+    t.string   "date"
+    t.string   "venue_name"
+    t.string   "address"
+    t.string   "city_zip"
+    t.text     "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "favorites", force: true do |t|
     t.string   "image_url"
     t.string   "title"
@@ -29,6 +41,11 @@ ActiveRecord::Schema.define(version: 20140514185852) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
+  end
+
+  create_table "myconcerts", force: true do |t|
+    t.integer "user_id"
+    t.integer "concert_id"
   end
 
   create_table "searches", force: true do |t|

@@ -46,3 +46,9 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'httparty'
 gem 'pry-rails'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'shoulda-matchers'
+end
