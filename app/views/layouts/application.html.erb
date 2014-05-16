@@ -45,7 +45,6 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
-            <li><a href="/users/:id">Profile</a></li>
             <% if !current_user %>
               <li><a href="/users">Sign up/Login</a></li>
             <% end %>
@@ -66,7 +65,17 @@
               <img src="<%= current_user.image %>" width="60px" height="60px"/>
           <% end %>
             <% if user_signed_in? %>
-            <a href="/users"><strong><%= current_user.email %></strong></a>
+            <div id="dropDown1" class="dropDown">
+              <span class="user_email"><strong><%= current_user.email %></strong></span>
+              <div id="content1" class="content" style="display:none">
+                  <ul class="profile">
+                    <li><span class="label">Name: </span><%= current_user.name%></li>
+                    <li><span class="label">Email:</span> <%= current_user.email%></li>
+                    <li><span class="label">Member since: </span><%= current_user.created_at%></li>
+                  </ul>
+              </div>
+            </div>
+
             <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
             <% end %>
           </div>

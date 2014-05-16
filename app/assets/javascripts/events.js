@@ -23,6 +23,29 @@
 
 (function($) {
     $(document).ready(function () {
+
+    $('.send').click(function() {
+        setTimeout(function() {
+            $('#plate').removeClass('front');
+            $('#container').removeClass('beginning');
+            $('.curvable').addClass('curved');
+            setTimeout(function() {
+                $('#container').addClass('hover');
+                setTimeout(function() {
+                    $('#container').addClass('fly_away_first');
+                    setTimeout(function() {
+                        $('#container').addClass('fly_away');
+                        setTimeout(function(){
+                            $('#plate').addClass('front');
+                            $('#container').removeClass('fly_away fly_away_first hover').addClass('beginning');
+                            $('.curvable').removeClass('curved');
+                        },3000);
+                    }, 600);
+                }, 2000);
+            }, 2800);
+        }, 200);
+    });
+
         /*-------------------- EXPANDABLE PANELS ----------------------*/
         var panelspeed = 500; //panel animate speed in milliseconds
         var totalpanels = 3; //total number of collapsible panels
@@ -33,17 +56,18 @@
         var currentpanel = defaultopenpanel;
         var iconheight = parseInt($('.icon-close-open').css('height'));
         var highlightopen = true;
+        var num = -100;
 
         //Initialise collapsible panels
         function panelinit() {
-                for (var i=1; i<=totalpanels; i++) {
-                    panelheight[i] = parseInt($('#cp-'+i).find('.expandable-panel-content').css('height'));
-                    $('#cp-'+i).find('.expandable-panel-content').css('margin-top', -panelheight[i]);
-                    if (defaultopenpanel == i) {
-                        $('#cp-'+i).find('.icon-close-open').css('background-position', '0px -'+iconheight+'px');
-                        $('#cp-'+i).find('.expandable-panel-content').css('margin-top', 0);
-                    }
+            for (var i=1; i<=totalpanels; i++) {
+                panelheight[i] = parseInt($('#cp-'+i).find('.expandable-panel-content').css('height'));
+                $('#cp-'+i).find('.expandable-panel-content').css('margin-top', -panelheight[i]);
+                if (defaultopenpanel == i) {
+                    $('#cp-'+i).find('.icon-close-open').css('background-position', '0px -'+iconheight+'px');
+                    $('#cp-'+i).find('.expandable-panel-content').css('margin-top', 0);
                 }
+            }
         }
 
         $('.expandable-panel-heading').click(function() {
@@ -92,3 +116,6 @@
     }); //END READY
 })(jQuery);
 
+$().ready(function() {
+
+            });
