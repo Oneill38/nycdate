@@ -51,7 +51,15 @@ class User < ActiveRecord::Base
           single_event[:city_name] = event["city_name"]
           single_event[:region_name] = event["region_name"]
           single_event[:start_time] = event["start_time"]
-          single_event[:description] = event["description"]
+
+          description = event["description"]
+
+          if description.length > 200
+            description = description.truncate(200, separator: /\s/)
+            single_event[:description] = description
+          elsif description.nil?
+            single_event[:description] = event["description"]
+          end
 
           results << single_event
         end
