@@ -62,15 +62,11 @@
             <li><a href="/favorites">Favorites</a></li>
           </ul>
           <div id="current_user_name">
-<<<<<<< HEAD
-            <% if current_user %>
-              <img src="<%= current_user.image %>" width="60px" height="60px"/>
-            <% end %>
-=======
+
            <% if current_user %>
               <img src="<%= current_user.image %>" width="60px" height="60px"/>
           <% end %>
->>>>>>> develop
+
             <% if user_signed_in? %>
             <div id="dropDown1" class="dropDown">
               <span class="user_email"><strong><%= current_user.email %></strong></span>
