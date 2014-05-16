@@ -7,6 +7,7 @@ class SearchesController < ApplicationController
   end
 
   def create
+
   # 1.) js file
   # 2.) click event to prevent default route to the controller from js with the url.
   # get value from form
@@ -22,12 +23,14 @@ class SearchesController < ApplicationController
 
     @results = User.search_events(date_query)
 
-    respond_to do |format|
-      format.html { redirect_to searches_path }
-      format.json { render json: @results }
-    end
 
-    # render :index
+    # respond_to do |format|
+    #   format.html { redirect_to searches_path }
+    #   format.json { render json: @results }
+    # end
+
+    render :index
+
   end
 
 end

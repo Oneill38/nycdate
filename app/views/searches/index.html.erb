@@ -1,4 +1,4 @@
-<div id="background_searches">
+<div id="background_searches" class="searches_page">
   <div class="users_container">
     <div id="main_div">
     <% if flash[:error] %>
@@ -7,13 +7,25 @@
 
     </div>
     <!-- Events API Search Info -->
-    <div class="results">
+    <div class="results general_events">
       <div class="search_box">
        <h3>Events</h3>
        <% @results.each do |single_event| %>
-       <% if single_event[:image_url] %>
-          <img src="<%= single_event[:image_url] %>" class="event_images"/>
-       <% end %>
+         <% if single_event[:image_url] && single_event[:image_url] != "/" %>
+          <div id="f1_container">
+            <div id="f1_card" class="shadow">
+              <div class="front face">
+              <img src="<%= single_event[:image_url] %>" style="height:180px; width:180px;"/>
+              </div>
+              <div class="back face center">
+                <p><span class="event"><%= single_event[:title] %></span>
+                <br>
+                <span class="event"><a href="<%= single_event[:url] %>" target="_blank"><em>Event Link</em></a></span>
+                </p>
+              </div>
+            </div>
+          </div>
+         <% end %>
        <br>
         <span class="label">Title: </span>
         <span class="event"><%= single_event[:title] %></span>
@@ -38,23 +50,36 @@
         <span class="label">Date/Time:</span>
         <span class="event"><%= single_event[:start_time] %></span>
         <br>
-        <h5><span class="label">Description:</span></h5>
-        <p class="description">
-          <span class="event"><%=sanitize single_event[:description], tags: %w(p) %></span>
-        </p>
+        <!-- Hiding Panels for 'Description' -->
+        <% if single_event[:description] %>
+          <div class="expandable-panel" id="cp-1">
+            <div class="expandable-panel-heading">
+                <h5>Description:<span class="label icon-close-open"></span></h5>
+             </div>
+            <div class="expandable-panel-content">
+              <p class="description">
+                <span class="event"><%=sanitize single_event[:description], tags: %w(p) %></span>
+              </p>
+            </div>
+          </div>
+        <% end %>
+
+        <!-- END of hiding Panels -->
+
+        <div class="fb-send" data-href="<%= single_event[:url] %>" data-width="30" data-height="10" data-colorscheme="light" style="position:relative; left:-65px; top:-20px;"></div>
+
         <!--- Save Search Functionality -->
        <form action="/favorites" method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="image_url" value=<%= single_event[:image_url] %> />
-        <input type="hidden" name="title" value=<%= single_event[:title] %> />
-        <input type="hidden" name="url" value=<%= single_event[:url] %> />
-        <input type="hidden" name="price" value=<%= single_event[:price] %> />
-        <input type="hidden" name="venue_address" value=<%= single_event[:venue_address] %> />
-        <input type="hidden" name="city_name" value=<%= single_event[:city_name] %> />
-        <input type="hidden" name="region_name" value=<%= single_event[:region_name] %> />
-        <input type="hidden" name="start_time" value=<%= single_event[:start_time] %> />
-        <input type="hidden" name="description" value=<%=sanitize single_event[:description], tags: %w(p) %> />
-
+        <input type="hidden" name="image_url" value="<%= single_event[:image_url] %>" />
+        <input type="hidden" name="title" value="<%= single_event[:title] %>" />
+        <input type="hidden" name="url" value="<%= single_event[:url] %>" />
+        <input type="hidden" name="price" value="<%= single_event[:price] %>" />
+        <input type="hidden" name="venue_address" value="<%= single_event[:venue_address] %>" />
+        <input type="hidden" name="city_name" value="<%= single_event[:city_name] %>" />
+        <input type="hidden" name="region_name" value="<%= single_event[:region_name] %>" />
+        <input type="hidden" name="start_time" value="<%= single_event[:start_time] %>" />
+        <input type="hidden" name="description" value="<%=sanitize single_event[:description], tags: %w(p) %>" />
 
         <input type="submit" value="Save"/>
       </form>

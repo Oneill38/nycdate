@@ -9,8 +9,21 @@
           <% else %>
             <% @favorites.each do |single_event| %>
              <% if single_event[:image_url] && single_event[:image_url] != "/" %>
-                <img src="<%= single_event[:image_url] %>" class="event_images"/>
+              <div id="f1_container">
+                <div id="f1_card" class="shadow">
+                  <div class="front face">
+                  <img src="<%= single_event[:image_url] %>" style="height:180px; width:180px;"/>
+                  </div>
+                  <div class="back face center">
+                    <p><span class="event"><%= single_event[:title] %></span>
+                    <br>
+                    <span class="event"><a href="<%= single_event[:url] %>" target="_blank"><em>Event Link</em></a></span>
+                    </p>
+                  </div>
+                </div>
+              </div>
              <% end %>
+
              <br>
               <span class="label">Title: </span>
               <span class="event"><%= single_event[:title] %></span>
@@ -39,6 +52,7 @@
               <p class="description">
                 <span class="event"><%= single_event[:description] %></span>
               </p>
+            <div class="fb-send" data-href="<%= single_event[:url] %>" data-width="30" data-height="10" data-colorscheme="light" style="position:relative; left:-55px; top:-20px;"></div>
 
             <%= form_for(single_event, method: "delete") do |f| %>
               <%= f.submit("Delete") %>

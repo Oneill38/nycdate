@@ -9,8 +9,6 @@ class FavoritesController < ApplicationController
 
     @user.favorites << @fav
 
-    binding.pry
-
     @favorites = Favorite.all
     redirect_to :back
   end
