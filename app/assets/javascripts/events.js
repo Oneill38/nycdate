@@ -73,6 +73,8 @@
 
         $('.expandable-panel-heading').click(function() {
             var obj = $(this).next();
+            // obj.fadeToggle("slow", "linear");
+
             var objid = parseInt($(this).parent().attr('ID').substr(3,2));
             currentpanel = objid;
             if (accordian == true) {
