@@ -13,9 +13,9 @@ describe Concert do
   it {should validate_presence_of(:date)}
 end
 
-describe Sport do
+describe Search do
   it {should validate_presence_of(:title)}
-  it {should validate_presence_of(:date)}
+  it {should validate_presence_of(:start_time)}
 end
 
 
