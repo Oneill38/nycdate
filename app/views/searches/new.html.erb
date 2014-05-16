@@ -3,29 +3,26 @@
     <div id="main_div">
 
       <h2>General Event Search</h2>
-      <img src="/assets/events.jpg" alt="picture of nyc" title="picture of nyc" class="search_category_images"/>
+      <div id="f1_container">
+        <div id="f1_card" class="shadow">
+          <div class="front face">
+            <img src="/assets/events.jpg" alt="picture of nyc" title="picture of nyc" class="search_category_images"/>
+          </div>
+          <div class="back face center">
+            <p><span class="event">Choose events by date.</span>
+            </p>
+          </div>
+        </div>
+      </div>
       <%= render partial: "search_form" %>
 
-      <div class="bubblingG">
-        <span id="bubblingG_1">
-        </span>
-        <span id="bubblingG_2">
-        </span>
-        <span id="bubblingG_3">
-        </span>
-      </div>
-<!--       <div class="results">
-        <div id="general_event_results" class="search_box">
-        </div>
-      </div> -->
       <div id="plate" class="front">
-            <textarea class="message">Dear User,
-            Click this button.
+            <textarea class="message">
+            Dear User,
+              Click this button for fun. :)
+            Love, App Maker
             </textarea>
-            <button class="send"> Send it </button> <br/>
-            <div id="bottom">
-                <a href="http://codepen.io/meanyack/pen/zkEsx" id="codepen_link"> * </a>
-            </div>
+            <button class="send"> Press Me </button> <br/>
         </div>
 
         <div id="container" class="beginning">

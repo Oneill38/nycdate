@@ -304,6 +304,12 @@ label {
          box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75);
 }
 
+.search {
+  height: 100px;
+  margin: -20px auto;
+  margin-bottom: -200px; /*This fixes airplane position*/
+}
+
 .search_box {
   width:600px;
   margin: 0px auto;
@@ -950,6 +956,10 @@ input[type="submit"]:hover {
     -o-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
         transform: rotateY(0deg);
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+         -o-border-radius: 10px;
+            border-radius: 10px;
 }
 
 .wing {
@@ -1015,21 +1025,21 @@ input[type="submit"]:hover {
     -o-perspective-origin: 200px 131px;
        perspective-origin: 200px 131px;
 
-    -webkit-transform-style: preserve-3d;
+ -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-        transform-style: preserve-3d;
+     -ms-transform-style: preserve-3d;
+         transform-style: preserve-3d;
 
     -webkit-transition: all 0.8s ease-in-out;
     -moz-transition: all 0.8s ease-in-out;
     -o-transition: all 0.8s ease-in-out;
     -ms-transition: all 0.8s ease-in-out;
         transition: all 0.8s ease-in-out;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
+   -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-      backface-visibility: hidden;
+     -o-backface-visibility: hidden;
+        backface-visibility: hidden;
     position: relative;
     width: 400px;
     height: 260px;
@@ -1042,17 +1052,17 @@ input[type="submit"]:hover {
 #plate {
     z-index:3;
     background: hsl(0, 0%, 88%);
-    -webkit-transform: rotateY(-180deg);
+    background-color: purple;
+ -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
-    -o-transform: rotateY(-180deg);
+      -o-transform: rotateY(-180deg);
     -ms-transform: rotateY(-180deg);
         transform: rotateY(-180deg);
     position: relative;
-
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-        box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     -ms-box-sizing: border-box;
+         box-sizing: border-box;
     padding: 20px;
     text-align: center;
     -webkit-backface-visibility: hidden;
@@ -1061,8 +1071,8 @@ input[type="submit"]:hover {
       -o-backface-visibility: hidden;
          backface-visibility: hidden;
     width: 400px;
-    height: 260px;
-    top: 50px;
+    height: 250px;
+    top: 250px;
 
     -webkit-transition: all 0.8s ease-in-out;
     -moz-transition: all 0.8s ease-in-out;
@@ -1125,7 +1135,7 @@ input[type="submit"]:hover {
     -moz-transform-origin: 100% 100%;
     -o-transform-origin: 100% 100%;
     -ms-transform-origin: 100% 100%;
-    transform-origin: 100% 100%;
+        transform-origin: 100% 100%;
 
     -webkit-transform: translateY(-38px) translateX(8px) rotateZ(22.62deg) skewY(-22.62deg);
     -moz-transform: translateY(-38px) translateX(8px) rotateZ(22.62deg) skewY(-22.62deg);
@@ -1188,7 +1198,7 @@ input[type="submit"]:hover {
     -moz-transform: rotateY(60deg);
     -o-transform: rotateY(60deg);
     -ms-transform: rotateY(60deg);
-    transform: rotateY(60deg);
+        transform: rotateY(60deg);
 }
 
 #container.hover #right-wing {
@@ -1196,7 +1206,7 @@ input[type="submit"]:hover {
     -moz-transform: rotateY(-60deg);
     -o-transform: rotateY(-60deg);
     -ms-transform: rotateY(-60deg);
-    transform: rotateY(-60deg);
+        transform: rotateY(-60deg);
 }
 
 #container.hover.fly_away_first {
@@ -1272,8 +1282,7 @@ input[type="submit"]:hover {
     -o-transform: rotateX(54deg) rotateY(-10deg) rotateZ(25deg);
     -ms-transform: rotateX(54deg) rotateY(-10deg) rotateZ(25deg);
         transform: rotateX(54deg) rotateY(-10deg) rotateZ(25deg);
-
-    -webkit-transition-delay: 0.5s;
+ -webkit-transition-delay: 0.5s;
     -moz-transition-delay: 0.5s;
     -o-transition-delay: 0.5s;
     -ms-transition-delay: 0.5s;
@@ -1281,7 +1290,7 @@ input[type="submit"]:hover {
 }
 
 #container.beginning {
-    -webkit-transform: rotateY(180deg);
+-webkit-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
@@ -1291,38 +1300,42 @@ input[type="submit"]:hover {
 .message {
     width: 100%;
     padding: 10px;
-
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
-       box-sizing: border-box;
+        box-sizing: border-box;
     height: 140px;
-    -webkit-font-smoothing: subpixel-antialiased;
-    -moz-font-smoothing: subpixel-antialiased;
+-webkit-font-smoothing: subpixel-antialiased;
+   -moz-font-smoothing: subpixel-antialiased;
     -ms-font-smoothing: subpixel-antialiased;
-    -o-font-smoothing: subpixel-antialiased;
-      font-smoothing: subpixel-antialiased;
+     -o-font-smoothing: subpixel-antialiased;
+        font-smoothing: subpixel-antialiased;
     font-size: 14px;
-    font-family: Helvetica, Arial, Verdana;
+    font-family: "Raleway", Tahoma, Verdana;
     line-height: 20px;
 }
 
-.send {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+button.send {
+-webkit-appearance: none;
+  -moz-appearance: none;
     -ms-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
+     -o-appearance: none;
+        appearance: none;
+-webkit-transition: all 0.3s ease-in-out;
+   -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
     border: 2px solid hsl(194, 100%, 72%);
     margin: 15px 0;
-    padding: 10px;
-    font-size: 20px;
+    padding: 5px;
+    font-size: 15px;
+    width: 100px;
+    height: 35px;
+-webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+     -o-border-radius: 5px;
+        border-radius: 5px;
     background-color: hsl(0, 0%, 94%);
 }
 
@@ -1348,12 +1361,11 @@ input[type="submit"]:hover {
     -o-transform-origin: 100px 112px;
     -ms-transform-origin: 100px 112px;
     transform-origin: 100px 112px;
-
-    -webkit-transition-delay: 1300ms;
-    -moz-transition-delay: 1300ms;
-    -o-transition-delay: 1300ms;
-    -ms-transition-delay: 1300ms;
-    transition-delay: 1300ms;
+-webkit-transition-delay: 1300ms;
+-moz-transition-delay: 1300ms;
+  -o-transition-delay: 1300ms;
+  -ms-transition-delay: 1300ms;
+      transition-delay: 1300ms;
     width: 0;
     height: 0;
     top: 0;
@@ -1363,16 +1375,16 @@ input[type="submit"]:hover {
 }
 
 .curvable {
-    -webkit-transition: -webkit-transform 800ms ease-out;
-    -moz-transition: -moz-transform 800ms ease-out;
-    -o-transition: -o-transform 800ms ease-out;
+ -webkit-transition: -webkit-transform 800ms ease-out;
+   -moz-transition: -moz-transform 800ms ease-out;
+     -o-transition: -o-transform 800ms ease-out;
     -ms-transition: -ms-transform 800ms ease-out;
-    transition: transform 800ms ease-out;
-    -webkit-backface-visibility: hidden;
+        transition: transform 800ms ease-out;
+ -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
+     -ms-backface-visibility: hidden;
+      -o-backface-visibility: hidden;
+         backface-visibility: hidden;
     position: absolute;
     background-color: transparent;
     z-index: 0;
@@ -1384,18 +1396,17 @@ input[type="submit"]:hover {
     border-left: 202px solid hsla(0, 0%, 0%, 0);
     border-bottom: 202px solid hsla(0, 0%, 0%, 0);
     border-top: 224px solid hsl(0, 0%, 88%);
-
-    -webkit-transform-origin: 96px 112px;
+ -webkit-transform-origin: 96px 112px;
     -moz-transform-origin: 96px 112px;
-    -o-transform-origin: 96px 112px;
-    -ms-transform-origin: 96px 112px;
-    transform-origin: 96px 112px;
+      -o-transform-origin: 96px 112px;
+     -ms-transform-origin: 96px 112px;
+         transform-origin: 96px 112px;
 
-    -webkit-transition-delay: 1650ms;
-    -moz-transition-delay: 1650ms;
-    -o-transition-delay: 1650ms;
+-webkit-transition-delay: 1650ms;
+   -moz-transition-delay: 1650ms;
+     -o-transition-delay: 1650ms;
     -ms-transition-delay: 1650ms;
-    transition-delay: 1650ms;
+        transition-delay: 1650ms;
 }
 
 .bottom_left.curvable {
@@ -1403,13 +1414,12 @@ input[type="submit"]:hover {
     -moz-transform-origin: 109px 0;
     -o-transform-origin: 109px 0;
     -ms-transform-origin: 109px 0;
-    transform-origin: 109px 0;
-
-    -webkit-transition-delay: 2100ms;
+        transform-origin: 109px 0;
+ -webkit-transition-delay: 2100ms;
     -moz-transition-delay: 2100ms;
     -o-transition-delay: 2100ms;
     -ms-transition-delay: 2100ms;
-    transition-delay: 2100ms;
+        transition-delay: 2100ms;
     width: 109px;
     height: 38px;
     background: hsl(0, 0%, 88%);
@@ -1432,19 +1442,18 @@ input[type="submit"]:hover {
     -moz-transform-origin: 0px 0;
     -o-transform-origin: 0px 0;
     -ms-transform-origin: 0px 0;
-    transform-origin: 0px 0;
+        transform-origin: 0px 0;
 
     -webkit-transition-delay: 2450ms;
     -moz-transition-delay: 2450ms;
     -o-transition-delay: 2450ms;
     -ms-transition-delay: 2450ms;
-    transition-delay: 2450ms;
+        transition-delay: 2450ms;
     width: 109px;
     height: 38px;
     background: hsl(0, 0%, 88%);
     bottom: 0;
     right: 0;
-
 }
 
 .bottom_right.curvable:after {
@@ -1458,27 +1467,27 @@ input[type="submit"]:hover {
 }
 
 .top_left.curvable.curved {
-    -webkit-transform: rotate3d(1,-1.11,0,180deg);
-    -moz-transform: rotate3d(1,-1.11,0,180deg);
+-webkit-transform: rotate3d(1,-1.11,0,180deg);
+  -moz-transform: rotate3d(1,-1.11,0,180deg);
     -o-transform: rotate3d(1,-1.11,0,180deg);
     -ms-transform: rotate3d(1,-1.11,0,180deg);
         transform: rotate3d(1,-1.11,0,180deg);
 }
 
 .bottom_left.curvable.curved {
-    -webkit-transform: rotate3d(2.4867,1,0,-180deg);
+-webkit-transform: rotate3d(2.4867,1,0,-180deg);
     -moz-transform: rotate3d(2.4867,1,0,-180deg);
-     -o-transform: rotate3d(2.4867,1,0,-180deg);
+      -o-transform: rotate3d(2.4867,1,0,-180deg);
      -ms-transform: rotate3d(2.4867,1,0,-180deg);
          transform: rotate3d(2.4867,1,0,-180deg);
 }
 
 .bottom_right.curvable.curved {
-    -webkit-transform: rotate3d(-2.4867,1,0,180deg);
-    -moz-transform: rotate3d(-2.4867,1,0,180deg);
-    -o-transform: rotate3d(-2.4867,1,0,180deg);
+-webkit-transform: rotate3d(-2.4867,1,0,180deg);
+   -moz-transform: rotate3d(-2.4867,1,0,180deg);
+     -o-transform: rotate3d(-2.4867,1,0,180deg);
     -ms-transform: rotate3d(-2.4867,1,0,180deg);
-       transform: rotate3d(-2.4867,1,0,180deg);
+        transform: rotate3d(-2.4867,1,0,180deg);
 }
 
 .top_right.curvable.curved {
@@ -1486,7 +1495,7 @@ input[type="submit"]:hover {
     -moz-transform: rotate3d(1,1.11,0,180deg);
     -o-transform: rotate3d(1,1.11,0,180deg);
     -ms-transform: rotate3d(1,1.11,0,180deg);
-       transform: rotate3d(1,1.11,0,180deg);
+        transform: rotate3d(1,1.11,0,180deg);
 }
 
 #container.hover .wing {
@@ -1501,16 +1510,3 @@ input[type="submit"]:hover {
     display: none;
 }
 
-#codepen_link {
-text-decoration: none;
-font-size: 22px;
-vertical-align: bottom;
-}
-
-#bottom {
-    position: absolute;
-    right: 7px;
-    bottom: 0;
-    width: 30px;
-    height: 30px;
-}
