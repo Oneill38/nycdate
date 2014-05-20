@@ -9,7 +9,6 @@
           <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
 
           <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> |
-          <!-- <img src="assets/fb_login.png" height="25" width="25"/> -->
 
           <%= link_to image_tag("fb_login.png", :border => 0, :alt => 'Facebook Login', :title => 'Facebook Login'), user_omniauth_authorize_path(:facebook), :class => 'navbar-link'%>
           <%= link_to 'Facebook Login', user_omniauth_authorize_path(:facebook), :class => 'navbar-link'%>
@@ -17,29 +16,51 @@
 
 
   <div id="wrapper1" class="gradient">
-    <div class="heading">
-      HTML Login form
-      </div>
+    <form accept-charset="UTF-8" action="/users" class="new_user header" id="new_user" method="post">
 
-    <form name="login-form" class="login-form" action="" method="post">
+    <div class="login-form" style="display:none">
+      <input name="utf8" type="hidden" value="✓">
+      <input name="authenticity_token" type="hidden" value="giXC3SSbIRmfjVhxkIjnpMCPBU+iu9AlsvT/bRVhQl4=">
+    </div>
 
     <div class="header">
+      <h1>Sign Up Form</h1>
+    </div>
+
+    <div class="login-content">
+      <label for="user_email">Email</label>
+      <br>
+      <input autofocus="autofocus" id="user_email" name="user[email]" type="email" value="">
+      <br>
+      <label for="user_password">Password</label>
+      <br>
+      <input autocomplete="off" id="user_password" name="user[password]" type="password">
+      <br>
+      <label for="user_password_confirmation">Password confirmation</label>
+      <br>
+      <input autocomplete="off" id="user_password_confirmation" name="user[password_confirmation]" type="password">
+
+      <input name="commit" type="submit" class="button input navbar-link" name="submit" value="Sign up">
+    </div>
+  </form>
+
+    <!-- <div class="header">
       <h1>Login Form</h1>
-      <span>Please login by using this beautiful login form or if you don't have an account, you can Register!</span>
+      <span>Please login by using this login form or if you don't have an account, you can Sign up!</span>
     </div>
 
-
-    <div class="content">
-      <input name="username" class="input" type="text" placeholder="Username" />
+    <div class="login-content">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input name="username" class="input" type="text" placeholder="Email" />
       <input name="password" class="input password" type="password" placeholder="Password" />
+      <input name="password" class="input password" type="password" placeholder="Password Confirmation" />
     </div>
-
     <!--Buttons-->
-    <div>
-      <input type="submit" class="button input" name="submit" value="Login" />
-      <input type="submit" class="register" name="submit" value="Register" />
+    <!-- <div>
+      <input type="submit" class="button input navbar-link" name="submit" value="Login" />
+
     </div>
-    </form>
+    </form> -->
   </div>
 
  </div>
