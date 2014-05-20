@@ -1,5 +1,5 @@
 
-// Leave for fixing later....
+// Change to AJAX request later?....
 
 // $(document).ready(function(){
 //   $('#general_event_search form').on('submit', function(event){
