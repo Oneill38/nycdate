@@ -27,18 +27,14 @@ class User < ActiveRecord::Base
   end
 
   def self.search_events(date_input)
+    data = HTTParty.get("http://api.eventful.com/json/events/search?app_key=#{ENV['APP_KEY']}&date=#{date_input}&location=New+York&page_size=20&include=price")
 
-    data = HTTParty.get("http://api.eventful.com/json/events/search?app_key=#{ENV['APP_KEY']}&date=#{date_input}&location=New+York&within=15&page_size=20&include=price")
-
-    json_data = JSON.parse(data)
-
-    results = []
-
-
-    if json_data.nil? || json_data.empty?
-      flash[:error] = "Data not found"
+    if data.nil? || data.empty?
       return false
     else
+      json_data = JSON.parse(data)
+      results = []
+
       json_data["events"]["event"].each do |event|
         single_event = {}
 
@@ -51,12 +47,17 @@ class User < ActiveRecord::Base
           single_event[:city_name] = event["city_name"]
           single_event[:region_name] = event["region_name"]
           single_event[:start_time] = event["start_time"]
+          description = event["description"]
 
+          if description.length > 300
+            description = description.slice(0,250)
+            single_event[:description] = description
 
+            results << single_event
+          else
             single_event[:description] = event["description"]
-
-
-          results << single_event
+            results << single_event
+          end
         end
       end
     results

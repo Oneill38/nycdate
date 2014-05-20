@@ -7,30 +7,16 @@ class SearchesController < ApplicationController
   end
 
   def create
-
-  # 1.) js file
-  # 2.) click event to prevent default route to the controller from js with the url.
-  # get value from form
-  # ajax request to send form data
-  # /searches - 'create method' POST
-  # which comes HERE
-  # Then render the JSON
-  # Then when 'done' back in js
-  # Take response render in html.
-
     @user = User.find(current_user.id)
     date_query = URI.escape(params[:date_input])
 
     @results = User.search_events(date_query)
-
-
-    # respond_to do |format|
-    #   format.html { redirect_to searches_path }
-    #   format.json { render json: @results }
-    # end
-
-    render :index
-
+    if @results.nil? || @results == false
+      flash[:notice] = "Sorry no events in the near future."
+      render :new
+    else
+      render :index
+    end
   end
 
 end

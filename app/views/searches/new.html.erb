@@ -16,7 +16,13 @@
             </div>
           </div>
           <%= render partial: "search_form" %>
+
         </div>
+        <div id="flash">
+            <% if flash[:notice] %>
+              <%= flash[:notice] %>
+            <% end %>
+          </div>
       </div>
     </div>
   </div>
