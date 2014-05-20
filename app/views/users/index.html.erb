@@ -6,10 +6,6 @@
         <% if user_signed_in? %>
           Hi <strong><%= current_user.name %></strong>&nbsp;&nbsp;&nbsp;
         <% else %>
-          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> |
-
           <%= link_to image_tag("fb_login.png", :border => 0, :alt => 'Facebook Login', :title => 'Facebook Login'), user_omniauth_authorize_path(:facebook), :class => 'navbar-link'%>
           <%= link_to 'Facebook Login', user_omniauth_authorize_path(:facebook), :class => 'navbar-link'%>
         <% end %></p>
@@ -24,7 +20,7 @@
     </div>
 
     <div class="header">
-      <h1>Sign Up Form</h1>
+      <h1>Sign Up/Login Form</h1>
     </div>
 
     <div class="login-content">
