@@ -14,9 +14,12 @@ var Concerts = {
         var concertsContainer = $("<div class='concertsContainer'>").appendTo("#dates")
         if(data.events.length > 0 == true ){
           $.each(data.events, function(k,v){
+            var date = (v.datetime_local).generateDate();
+            var time = (v.datetime_local).generateTime();
             $("<img>").attr("src", v.performers[0].image).appendTo(concertsContainer);
             $("<h2>").text(v.title).appendTo(concertsContainer);
-            $("<h2>").text(v.datetime_local).appendTo(concertsContainer);
+            $("<h2>").text(date).appendTo(concertsContainer);
+            $("<h2>").text(time).appendTo(concertsContainer);
             $("<h3>").text("Tickets from: " + "$" + v.stats.lowest_price + " - " + "$" + v.stats.highest_price).appendTo(concertsContainer);
             $("<h3>").text(v.venue.name).appendTo(concertsContainer);
             $("<h4>").text(v.venue.address).appendTo(concertsContainer);
@@ -43,3 +46,5 @@ var Concerts = {
 $(document).ready(function(){
   Concerts.populate();
 })
+
+
