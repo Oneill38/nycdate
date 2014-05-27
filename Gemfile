@@ -48,3 +48,10 @@ gem 'httparty'
 gem 'pry-rails'
 gem 'separate_datetime'
 gem 'jasmine'
+
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'shoulda-matchers'
+end
