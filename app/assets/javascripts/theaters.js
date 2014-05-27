@@ -15,9 +15,12 @@ var Theater = {
         var theaterContainer = $("<div class='theaterContainer'>").appendTo("#theaterDates");
         if(data.events.length > 0){
           $.each(data.events, function(k,v){
+            var date = (v.datetime_local).generateDate();
+            var time = (v.datetime_local).generateTime();
             $("<img>").attr("src", v.performers[0].image).appendTo(theaterContainer);
             $("<h2>").text(v.title).appendTo(theaterContainer);
-            $("<h2>").text(v.datetime_local).appendTo(theaterContainer);
+            $("<h2>").text(date).appendTo(theaterContainer);
+            $("<h2>").text(time).appendTo(theaterContainer);
             $("<h3>").text("Tickets from: " + "$" + v.stats.lowest_price + " - " + "$" + v.stats.highest_price).appendTo(theaterContainer);
             $("<h3>").text(v.venue.name).appendTo(theaterContainer);
             $("<h4>").text(v.venue.address).appendTo(theaterContainer);
