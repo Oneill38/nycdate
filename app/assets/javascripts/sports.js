@@ -14,9 +14,12 @@ var Sports = {
         var sportsContainer = $("<div class='sportsContainer'>").appendTo("#sportsDates")
         if(data.events.length > 0 == true ){
           $.each(data.events, function(k,v){
+            var date = (v.datetime_local).generateDate();
+            var time = (v.datetime_local).generateTime();
             $("<img>").attr("src", v.performers[0].image).appendTo(sportsContainer);
             $("<h2>").text(v.title).appendTo(sportsContainer);
-            $("<h2>").text(v.datetime_local).appendTo(sportsContainer);
+            $("<h2>").text(date).appendTo(sportsContainer);
+            $("<h2>").text(time).appendTo(sportsContainer);
             $("<h3>").text("Tickets from: " + "$" + v.stats.lowest_price + " - " + "$" + v.stats.highest_price).appendTo(sportsContainer);
             $("<h3>").text(v.venue.name).appendTo(sportsContainer);
             $("<h4>").text(v.venue.address).appendTo(sportsContainer);
