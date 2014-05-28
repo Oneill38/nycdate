@@ -1,6 +1,6 @@
 == README
-[https://www.pivotaltracker.com/s/projects/1076938]
-[http://rendezvousnyc.herokuapp.com/]
+[Pivotal Tracker](https://www.pivotaltracker.com/s/projects/1076938)
+[Rendezvous NYC Heroku Link](http://rendezvousnyc.herokuapp.com/)
 
 # Rendezvous NYC
 
