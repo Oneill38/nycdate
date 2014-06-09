@@ -47,7 +47,8 @@
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
             <% if !current_user %>
-              <li><a href="/users">Sign up/Login</a></li>
+              <li><a href="/users">Sign up</a></li>
+              <li><a href="/users/sign_in">Login</a></li>
             <% end %>
             <li class="dropdown">
               <a href="/searches" class="dropdown-toggle" data-toggle="dropdown">Search<b class="caret"></b></a>
